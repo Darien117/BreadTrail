@@ -20,11 +20,11 @@ import { AngularFireDatabase, AngularFireObject } from 'angularfire2/database';
 export class CreateShipmentPage {
    ship: Shipment;
    shipment = {
-     id: 0,
+     userID: 0,
      source:'',
-     destination:'',
+     dest:'',
      details:'',
-     location:''
+     loc:''
    }
    itemRef: AngularFireObject<any>;
    item: any;
@@ -51,7 +51,7 @@ export class CreateShipmentPage {
 
   logForm(form){
     this.ship = this.shipment;
-    this.itemRef = this.db.object('/Create/' + this.ship.id);
+    this.itemRef = this.db.object('/Create/'+ this.ship.userID);
     //if(this.itemRef.snapshotChanges.length == 0) console.log("Shivba"); //a way to check if uid exists already
     this.itemRef.set(this.ship); 
     //this.saveToJSONFile(this.ship);

@@ -1,7 +1,7 @@
 export class Shipment{
-    id: number = 0;
+    userID: number = 0;
     source: string;
-    destination: string;
+    dest: string;
     details: string;
-    location: string;
+    loc: string;
 }

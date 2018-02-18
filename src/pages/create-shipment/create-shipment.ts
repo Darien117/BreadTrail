@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Shipment } from './shipment';
 import { File } from '@ionic-native/file';
-
+import { AngularFireDatabase, AngularFireObject } from 'angularfire2/database';
 
 
 /**
@@ -26,7 +26,9 @@ export class CreateShipmentPage {
      details:'',
      location:''
    }
-  constructor(public navCtrl: NavController, public navParams: NavParams, private file: File) {
+   itemRef: AngularFireObject<any>;
+   item: any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private file: File, public db: AngularFireDatabase) { 
   }
   
 
@@ -48,13 +50,12 @@ export class CreateShipmentPage {
   }
 
   logForm(form){
-    //this.shipment = form.value;
     this.ship = this.shipment;
-    //this.ship = JSON.stringify(this.shipment);
-    console.log(this.ship);
-    console.log(JSON.stringify(this.ship));
-    this.saveToJSONFile(this.ship);
-
+    this.itemRef = this.db.object('/Shipments/' + this.ship.id);
+    this.itemRef = this.db.object('/Shipments/999');
+    if(this.itemRef.snapshotChanges.length == 0) console.log("Shivba"); //a way to check if uid exists already
+    //this.itemRef.set(this.ship); 
+    //this.saveToJSONFile(this.ship);
     this.returnConfirm();
   }
 

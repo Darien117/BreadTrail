@@ -52,8 +52,7 @@ export class CreateShipmentPage {
   logForm(form){
     this.ship = this.shipment;
     this.itemRef = this.db.object('/Shipments/' + this.ship.id);
-    //this.itemRef = this.db.object('/Shipments/999');
-    if(this.itemRef.snapshotChanges.length == 0) console.log("Shivba"); //a way to check if uid exists already
+    //if(this.itemRef.snapshotChanges.length == 0) console.log("Shivba"); //a way to check if uid exists already
     this.itemRef.set(this.ship); 
     //this.saveToJSONFile(this.ship);
     this.returnConfirm();

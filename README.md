@@ -9,3 +9,6 @@ Contact:
 Nirvan Sharma: nirvan.sharma95@gmail.com  
 Reshawn Ramjattan: reshawnramjattan@gmail.com  
 Darien Jardine: darien_jardine@outlook.com  
+
+Article:
+https://www.dropbox.com/s/dg1sj3d11noxr0o/Breadtrail%20ICT_Update%20article%20June%202018.docx?dl=0

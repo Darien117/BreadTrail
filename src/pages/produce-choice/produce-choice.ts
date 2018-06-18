@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { MyProducePage } from '../my-produce/my-produce';
+import { AffirmShipmentPage } from '../affirm-shipment/affirm-shipment';
 import { CreateShipmentPage } from '../create-shipment/create-shipment';
 /**
  * Generated class for the ProduceChoicePage page.
@@ -22,7 +22,7 @@ export class ProduceChoicePage {
   goToProducePage() {
     //push another page onto the history stack
     //causing the nav controller to animate the new page in
-    this.navCtrl.push(MyProducePage);
+    this.navCtrl.push(AffirmShipmentPage);
   }
   goToCreateShipmentPage() {
     //push another page onto the history stack

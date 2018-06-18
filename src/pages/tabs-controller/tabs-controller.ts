@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { TracePage } from '../trace/trace';
-import { MyProducePage } from '../my-produce/my-produce';
+import { AffirmShipmentPage } from '../affirm-shipment/affirm-shipment';
 import { ProduceChoicePage } from '../produce-choice/produce-choice';
 import { BrowsePartnersPage } from '../browse-partners/browse-partners';
 

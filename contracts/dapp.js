@@ -17,26 +17,29 @@ const db = admin.database();
 
   web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
   abi = JSON.parse('[{"constant":true,"inputs":[{"name":"id","type":"uint256"}],"name":"getShipment","outputs":[{"name":"u","type":"uint256"},{"name":"s","type":"uint256"},{"name":"so","type":"bytes32"},{"name":"d","type":"bytes32"},{"name":"ts","type":"uint256"},{"name":"l","type":"bytes32"},{"name":"c","type":"bytes32"},{"name":"n","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getShipCount","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"candidate","type":"bytes32"}],"name":"totalVotesFor","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"candidate","type":"bytes32"}],"name":"validCandidate","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"bytes32"}],"name":"votesReceived","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"userShipments","outputs":[{"name":"userID","type":"uint256"},{"name":"shipID","type":"uint256"},{"name":"source","type":"bytes32"},{"name":"dest","type":"bytes32"},{"name":"timestamp","type":"uint256"},{"name":"location","type":"bytes32"},{"name":"comment","type":"bytes32"},{"name":"next","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"candidateList","outputs":[{"name":"","type":"bytes32"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"userID","type":"uint256"},{"name":"source","type":"bytes32"},{"name":"dest","type":"bytes32"},{"name":"details","type":"bytes32"},{"name":"loc","type":"bytes32"}],"name":"createShipment","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"candidate","type":"bytes32"}],"name":"voteForCandidate","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"sid","type":"uint256"},{"name":"newd","type":"bytes32"},{"name":"comment","type":"bytes32"},{"name":"location","type":"bytes32"},{"name":"userID","type":"uint256"}],"name":"affirm","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"inputs":[{"name":"candidateNames","type":"bytes32[]"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"}]');
-  TrackingContract = web3.eth.contract(abi);
+  TrackingContract = 
+   web3.eth.contract(abi);
   
   contractInstance = TrackingContract.at('0x4557a3615d301bc3f2b6357423c9eec2aef22ea3');
   
   
   function createShipment(userID, source, dest, details, loc){
-    userID = 1;
-    source = "Toco Farms";
-    dest = "Grande Market";
-    details = "5 pong baigan";
-    loc = "NA lul";
+    // userID = 1;
+    // source = "Toco Farms";
+    // dest = "Grande Market";
+    // details = "5 pong baigan";
+    // loc = "NA lul";
     contractInstance.createShipment(userID,source,dest,details,loc, {from: web3.eth.accounts[0], gas:4000000}, function(){
       console.log("Created block: Shipment made");
     });
   }
   
   function affirmShipment(shipID, newDest, comment, location, userID){
-    contractInstance.createShipment(userID,source,dest,details,loc, {from: web3.eth.accounts[0], gas:4000000}, function(){
-      console.log("Created block: Shipment updated");
-    });
+    contractInstance.affirmShipment(shipID,newDest,comment,location,userID);
+    // contractInstance.createShipment(userID,source,dest,details,loc, {from: web3.eth.accounts[0], gas:4000000}, function(){
+
+    //   console.log("Created block: Shipment updated");
+    // });
   }
   function getShipment(shipID){
     var ShipmentPromise = new Promise((resolve,reject)=>{

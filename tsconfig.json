@@ -6,12 +6,16 @@
     "experimentalDecorators": true,
     "lib": [
       "dom",
-      "es2015"
+      "es2017"
     ],
     "module": "es2015",
     "moduleResolution": "node",
     "sourceMap": true,
     "target": "es5"
+    // "types": [
+    //   "node",
+    //   "webpack-env"
+    // ]
   },
   "include": [
     "src/**/*.ts"
@@ -23,6 +27,9 @@
   ],
   "types": [
     "node"
+  ],
+  "typeRoots": [
+    "node_modules/@types"
   ],
   "compileOnSave": false,
   "atom": {

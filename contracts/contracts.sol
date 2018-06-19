@@ -1,5 +1,5 @@
 pragma solidity ^0.4.18;
-// We have to specify what version of compiler this code will compile with
+
 
 contract Trail {
 
@@ -14,10 +14,6 @@ contract Trail {
         uint next;
     }
 
-    /* This is the constructor which will be called once when you
-    deploy the contract to the blockchain. When we deploy the contract,
-    we will pass an array of candidates who will be contesting in the election
-    */
     mapping (uint => shipment ) public userShipments;
     uint shipID;
     constructor() public {

@@ -65,7 +65,7 @@ export class AffirmShipmentPage {
       gasPrice: this.web3.utils.toHex(await this.web3.eth.getGasPrice().then(data => data)),
       gasLimit: this.web3.utils.toHex(4612388), // Web3.toHex(300000)
       from: '0x7005Fa96d92B847043f0Ef87E47616a265C32349',
-      to: '0x42eA36850d36c60Bf7208E39827DB26707be1A74',
+      to: '0x072F945751d83765D72A04821C63C30c48D41691',
       value: "0x0",
       data: data
     }

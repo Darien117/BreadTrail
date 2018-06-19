@@ -19,7 +19,7 @@ export class ContractProvider {
   constructor(public http: HttpClient,public _web3: Web3Service) {
     console.log('Hello ContractProvider Provider');
     this.web3 = _web3.get();
-    this.contractInstance = new this.web3.eth.Contract(this.abi,'0x42eA36850d36c60Bf7208E39827DB26707be1A74',
+    this.contractInstance = new this.web3.eth.Contract(this.abi,'0x072F945751d83765D72A04821C63C30c48D41691',
       {
         from:'0x7005Fa96d92B847043f0Ef87E47616a265C32349'
       }); 

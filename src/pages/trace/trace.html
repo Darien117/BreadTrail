@@ -20,11 +20,14 @@
   
   
 
-  <ion-list id="trace-list2" color="primary" *ngFor="let item of items | async" >
+  <ion-list id="trace-list2" color="primary" *ngFor="let feedItem of feed" >
     <ion-item color="light" id="trace-list-item8">
-      Product:  {{ item.comment }}<br>
-      Name:      {{ item.source }}<br>
-      Location:  {{ item.location}}
+      <strong>Shipment</strong><br><br>
+      <strong>Product Details:</strong>  {{ feedItem.comment }}<br>
+      <strong>Source:</strong>      {{ feedItem.source }}<br>
+      <strong>Destination:</strong>      {{ feedItem.dest }}<br>
+      <strong>Timestamp:</strong>      {{ feedItem.timestamp }}<br>
+      <strong>Location:</strong>  {{ feedItem.location}}
     </ion-item>
   </ion-list>
 </ion-content>

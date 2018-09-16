@@ -21,13 +21,16 @@
   
 
   <ion-list id="trace-list2" color="primary" *ngFor="let feedItem of feed" >
-    <ion-item color="light" id="trace-list-item8">
-      <strong>Shipment</strong><br><br>
-      <strong>Product Details:</strong>  {{ feedItem.comment }}<br>
-      <strong>Source:</strong>      {{ feedItem.source }}<br>
-      <strong>Destination:</strong>      {{ feedItem.dest }}<br>
-      <strong>Timestamp:</strong>      {{ feedItem.timestamp }}<br>
-      <strong>Location:</strong>  {{ feedItem.location}}
+    <ion-item color="light" id="trace-list-item8" text-wrap>
+      <div class="linebreak" item-text-wrap>
+          <strong id="title">Shipment</strong><br><br>
+          <strong>Product Details:</strong> <p>{{ feedItem.comment }}</p>
+          <strong>Source:</strong> <p>  {{ feedItem.source }}</p>  
+          <strong>Destination:</strong> <p>   {{ feedItem.dest }}</p>    
+          <strong>Timestamp:</strong> <p>  {{ feedItem.timestamp }}</p>   
+          <strong>Location:</strong> <p>  {{ feedItem.location}}</p>
+      </div>
+     
     </ion-item>
   </ion-list>
 </ion-content>

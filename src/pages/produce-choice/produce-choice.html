@@ -14,7 +14,8 @@
 
 
 <ion-content padding>
-  <button (click)="goToProducePage()" ion-button color="danger" block>
+  <!--
+ <button (click)="goToProducePage()" ion-button color="danger" block>
      Affirm Existing Shipment
   </button>
   <br>
@@ -22,6 +23,22 @@
   <button (click)="goToCreateShipmentPage()" ion-button color="danger" block>
       Create New Shipment
    </button>
+
+  -->
+  <h1 text-center="">Shipments</h1>
+
+  <div class="buttons" text-center="">
+
+      <button (click)="goToProducePage()" ion-button color="danger">
+          Confirm
+      </button>
+
+      <button (click)="goToCreateShipmentPage()" ion-button color="danger">
+        Create
+      </button>
+    
+    </div>
+ 
 </ion-content>
     
 

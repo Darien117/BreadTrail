@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AffirmShipmentPage } from '../affirm-shipment/affirm-shipment';
 import { CreateShipmentPage } from '../create-shipment/create-shipment';
+import { ScanToAffirmPage } from '../scan-to-affirm/scan-to-affirm';
 /**
  * Generated class for the ProduceChoicePage page.
  *

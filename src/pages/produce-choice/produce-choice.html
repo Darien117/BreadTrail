@@ -14,7 +14,8 @@
 
 
 <ion-content padding>
-  <button (click)="goToProducePage()" ion-button color="danger" block>
+  <!--
+ <button (click)="goToProducePage()" ion-button color="danger" block>
      Affirm Existing Shipment
   </button>
   <br>
@@ -22,6 +23,36 @@
   <button (click)="goToCreateShipmentPage()" ion-button color="danger" block>
       Create New Shipment
    </button>
-</ion-content>
-    
 
+  -->
+  <h1 text-center="">Shipments</h1>
+  <br><br>
+  <div id="suggestionDesc2" *ngIf="this.isLoggedIn==false">
+    <p>Login or register first to view your produce:</p>
+  </div>
+  <div *ngIf="this.isLoggedIn==false">
+    <ion-item>
+      <ion-label floating>Email Address</ion-label>
+      <ion-input type="text" [(ngModel)]="this.userEmail"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="this.userPw"></ion-input>
+    </ion-item>
+    <button ion-button (click)="registerUser()">Register</button>
+    <button ion-button (click)="loginUser()">Login</button>
+
+  </div>
+  <div class="buttons" text-center="" *ngIf="this.isLoggedIn==true">
+    <button (click)="goToProducePage()" ion-button color="danger">
+      Confirm
+    </button>
+
+    <button (click)="goToCreateShipmentPage()" ion-button color="danger">
+      Create
+    </button>
+
+  </div>
+
+
+</ion-content>

@@ -5,8 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { Web3Service } from '../../providers/web3-service/web3-service';
 import { ContractProvider } from '../../providers/contract/contract';
 import { Shipment } from '../create-shipment/shipment';
-import { AngularFireAuth } from 'angularfire2/auth'
-import { LoginServiceProvider } from '../../providers/login-service/login-service'
+
 
 declare var testCrop
 declare var testName
@@ -35,20 +34,13 @@ export class TracePage {
 
   // this tells the tabs component which Pages
   // should be each tab's root Page
-  constructor(public navCtrl: NavController, public _web3: Web3Service, public cp: ContractProvider, private afAuth: AngularFireAuth,
-    private loginService: LoginServiceProvider) {
+  constructor(public navCtrl: NavController, public _web3: Web3Service, public cp: ContractProvider) {
     this.web3 = _web3.get();
     this.contractInstance = cp.returnContract();
 
 
     this.getFeed20();
     //console.log(this.contractInstance.events.allEvents());
-  }
-
-  ionViewWillLoad() {
-    this.afAuth.authState.subscribe(data => {
-      console.log(data);
-    })
   }
 
 
@@ -94,14 +86,5 @@ export class TracePage {
       });
     });
   }
-
-
-  registerUser() {
-    this.loginService.register(this.userEmail, this.userPw);
-  }
-  loginUser() {
-    this.loginService.login(this.userEmail, this.userPw);
-  }
-
 
 }

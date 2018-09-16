@@ -6,11 +6,12 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page2">
-  <!-- <form id="trace-form1">
+
+  <form id="trace-form1">
     <ion-searchbar placeholder="Search" name="" id="trace-search1"></ion-searchbar>
     <div class="spacer" style="width:300.023px;height:28.9884px;" id="trace-spacer1"></div>
-  </form> -->
-  <button id="trace-button1" ion-button color="danger" (click)="searchForChain()" block>
+  </form>
+  <button id="trace-button1" ion-button color="danger" block>
     Scan Bar Code
   </button>
   <br>
@@ -18,9 +19,7 @@
   <ion-list id="trace-list2" color="primary" *ngFor="let feedItem of feed">
     <ion-item color="light" id="trace-list-item8" text-wrap>
       <div class="linebreak" item-text-wrap>
-        <strong id="title">Shipment</strong>
-        <br>
-        <br>
+        <strong id="title">Shipment</strong><br><br>
         <strong>Product Details:</strong>
         <p>{{ feedItem.comment }}</p>
         <strong>Source:</strong>

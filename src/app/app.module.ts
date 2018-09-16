@@ -17,11 +17,12 @@ import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireDatabase} from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database';
 import { ContractProvider } from '../providers/contract/contract';
-import { Web3Service }        from '../providers/web3-service/web3-service';
-import { HttpClientModule, HttpClient} from '@angular/common/http'; 
-import {HttpModule} from '@angular/http'
+import { Web3Service } from '../providers/web3-service/web3-service';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpModule } from '@angular/http'
+import { LoginServiceProvider } from '../providers/login-service/login-service';
 
 
 @NgModule({
@@ -56,11 +57,12 @@ import {HttpModule} from '@angular/http'
     StatusBar,
     SplashScreen,
     File,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     ContractProvider,
     Web3Service,
     HttpModule,
-    HttpClient
+    HttpClient,
+    LoginServiceProvider
   ]
 })
-export class AppModule {}
+export class AppModule { }

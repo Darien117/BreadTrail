@@ -7,6 +7,8 @@ import { AffirmShipmentPage } from '../pages/affirm-shipment/affirm-shipment';
 import { ProduceChoicePage } from '../pages/produce-choice/produce-choice';
 import { CreateShipmentPage } from '../pages/create-shipment/create-shipment';
 import { BrowsePartnersPage } from '../pages/browse-partners/browse-partners';
+import { GenCodePage } from '../pages/gencode/gencode';
+import { ViewProduceChainPage } from '../pages/view-produce-chain/view-produce-chain';
 import { TabsControllerPage } from '../pages/tabs-controller/tabs-controller';
 import { File } from '@ionic-native/file';
 
@@ -21,8 +23,14 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { ContractProvider } from '../providers/contract/contract';
 import { Web3Service } from '../providers/web3-service/web3-service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+<<<<<<< HEAD
 import { HttpModule } from '@angular/http'
 import { LoginServiceProvider } from '../providers/login-service/login-service';
+=======
+import { QRScanner } from '@ionic-native/qr-scanner';
+import { QRCodeModule } from 'angularx-qrcode';
+import { HttpModule } from '@angular/http'
+>>>>>>> 4ac14250f74f54130514025c2de3846fa142be3d
 
 
 @NgModule({
@@ -33,7 +41,9 @@ import { LoginServiceProvider } from '../providers/login-service/login-service';
     ProduceChoicePage,
     BrowsePartnersPage,
     CreateShipmentPage,
-    TabsControllerPage
+    TabsControllerPage,
+    GenCodePage,
+    ViewProduceChainPage
   ],
   imports: [
     BrowserModule,
@@ -42,6 +52,7 @@ import { LoginServiceProvider } from '../providers/login-service/login-service';
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     HttpClientModule,
+    QRCodeModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -51,7 +62,9 @@ import { LoginServiceProvider } from '../providers/login-service/login-service';
     ProduceChoicePage,
     BrowsePartnersPage,
     CreateShipmentPage,
-    TabsControllerPage
+    TabsControllerPage,
+    GenCodePage,
+    ViewProduceChainPage
   ],
   providers: [
     StatusBar,
@@ -61,8 +74,13 @@ import { LoginServiceProvider } from '../providers/login-service/login-service';
     ContractProvider,
     Web3Service,
     HttpModule,
+<<<<<<< HEAD
     HttpClient,
     LoginServiceProvider
+=======
+    QRScanner,
+    HttpClient
+>>>>>>> 4ac14250f74f54130514025c2de3846fa142be3d
   ]
 })
 export class AppModule { }

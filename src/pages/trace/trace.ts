@@ -5,6 +5,8 @@ import { Observable } from 'rxjs/Observable';
 import { Web3Service } from '../../providers/web3-service/web3-service';
 import { ContractProvider } from '../../providers/contract/contract';
 import { Shipment } from '../create-shipment/shipment';
+import { GenCodePage } from '../gencode/gencode';
+import { ViewProduceChainPage } from '../view-produce-chain/view-produce-chain';
 
 
 declare var testCrop
@@ -42,8 +44,6 @@ export class TracePage {
     this.getFeed20();
     //console.log(this.contractInstance.events.allEvents());
   }
-
-
   getShipCount() {
     var shipCountPromise = new Promise((resolve, reject) => {
       var shipment = this.contractInstance.methods.getShipCount().call();
@@ -85,6 +85,15 @@ export class TracePage {
 
       });
     });
+  }
+
+  genQRCode(id) {
+    console.log(id);
+    this.navCtrl.push(GenCodePage, { shipId: id });
+  }
+
+  searchForChain() {
+    this.navCtrl.push(ViewProduceChainPage);
   }
 
 }

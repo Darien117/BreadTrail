@@ -5,6 +5,7 @@ import { CreateShipmentPage } from '../create-shipment/create-shipment';
 import { AngularFireAuth } from 'angularfire2/auth'
 import { LoginServiceProvider } from '../../providers/login-service/login-service'
 import { AlertController } from 'ionic-angular';
+
 /**
  * Generated class for the ProduceChoicePage page.
  *

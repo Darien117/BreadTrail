@@ -6,33 +6,35 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page3">
-    <form (ngSubmit)="logForm()">
-        <h1>Send</h1>
-        <ion-item>
-            <ion-label>Destination: </ion-label>
-          <ion-input type="text" [(ngModel)]="affirm.destination" name="Destination"></ion-input>
-        </ion-item>
-        <h1>Receive</h1>
-        <ion-item>
-            <ion-label>Comment: </ion-label>
-            <ion-input type="text" [(ngModel)]="affirm.comment" name="Comment"></ion-input>
-        </ion-item>
-        
-        <ion-item>
-            <ion-label>Shipment ID: </ion-label>
-            <ion-input type="number" [(ngModel)]="affirm.shipmentID" name="Shipment ID"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label>User ID: </ion-label>
-          <ion-input type="number" [(ngModel)]="affirm.userID" name="user ID"></ion-input>
-      </ion-item>
-        <ion-item>
-            <ion-label>Location: </ion-label>
-            <ion-input type="text" [(ngModel)]="affirm.location" name="Location"></ion-input>
-        </ion-item>
-       
-        <button ion-button type="submit" color="danger" block>Add Shipment</button>
-      </form>
+  <form (ngSubmit)="logForm()">
+
+    <h1>Receive</h1>
+    <ion-item>
+      <ion-label>Comment: </ion-label>
+      <ion-input type="text" [(ngModel)]="affirm.comment" name="Comment"></ion-input>
+    </ion-item>
+
+    <!-- <ion-item>
+      <ion-label>Shipment ID: </ion-label>
+      <ion-input type="number" [(ngModel)]="affirm.shipmentID" name="Shipment ID"></ion-input>
+    </ion-item> -->
+    <ion-item>
+      <ion-label>User ID: </ion-label>
+      <ion-input type="number" [(ngModel)]="affirm.userID" name="user ID"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Location: </ion-label>
+      <ion-input type="text" [(ngModel)]="affirm.location" name="Location"></ion-input>
+    </ion-item>
+
+    <h1>Sending?</h1>
+    <ion-item>
+      <ion-label>Destination: </ion-label>
+      <ion-input type="text" [(ngModel)]="affirm.destination" name="Destination"></ion-input>
+    </ion-item>
+
+    <button ion-button type="submit" color="danger" block>Add Shipment</button>
+  </form>
   <!--
   <h1 id="myProduce-heading1" style="color:#000000;">
     Receive

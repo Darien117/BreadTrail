@@ -14,31 +14,31 @@
 
 
 <ion-content padding>
-    <form (ngSubmit)="logForm()">
-        <ion-item>
-          <ion-label>User ID: </ion-label>
-          <ion-input type="number" [(ngModel)]="shipment.userID" name="UserID"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label>Source: </ion-label>
-          <ion-input type="text" [(ngModel)]="shipment.source" name="Source"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label>Destination: </ion-label>
-            <ion-input type="text" [(ngModel)]="shipment.dest" name="Destination"></ion-input>
-        </ion-item>
-        
-        <ion-item>
-            <ion-label>Details: </ion-label>
-            <ion-input type="text" [(ngModel)]="shipment.details" name="Details"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label>Location: </ion-label>
-            <ion-input type="text" [(ngModel)]="shipment.loc" name="Location"></ion-input>
-        </ion-item>
-       
-        <button ion-button type="submit" color="danger" block>Add Shipment</button>
-      </form>
-  
-  
+  <form (ngSubmit)="logForm()">
+    <!-- <ion-item>
+      <ion-label>User ID: </ion-label>
+      <ion-input type="text" [(ngModel)]="shipment.userID" name="UserID"></ion-input>
+    </ion-item> -->
+    <ion-item>
+      <ion-label>Source: </ion-label>
+      <ion-input type="text" [(ngModel)]="shipment.source" name="Source"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Destination: </ion-label>
+      <ion-input type="text" [(ngModel)]="shipment.dest" name="Destination"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Details: </ion-label>
+      <ion-input type="text" [(ngModel)]="shipment.details" name="Details"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Location: </ion-label>
+      <ion-input type="text" [(ngModel)]="shipment.loc" name="Location"></ion-input>
+    </ion-item>
+
+    <button ion-button type="submit" color="danger" block>Add Shipment</button>
+  </form>
+
+
 </ion-content>

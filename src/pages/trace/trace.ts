@@ -72,7 +72,7 @@ export class TracePage {
           console.log(shipments);
           let timestamp_ms = this.web3.utils.hexToNumber(shipment[4]) * 1000;
           let shipmentObject = {
-            userID: this.web3.utils.hexToNumber(shipment[0]),
+            userID: this.web3.utils.hexToUtf8(shipment[0]),
             shipmentID: this.web3.utils.hexToNumber(shipment[1]),
             source: this.web3.utils.hexToUtf8(shipment[2]),
             dest: this.web3.utils.hexToUtf8(shipment[3]),

@@ -23,14 +23,10 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { ContractProvider } from '../providers/contract/contract';
 import { Web3Service } from '../providers/web3-service/web3-service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-<<<<<<< HEAD
-import { HttpModule } from '@angular/http'
 import { LoginServiceProvider } from '../providers/login-service/login-service';
-=======
 import { QRScanner } from '@ionic-native/qr-scanner';
 import { QRCodeModule } from 'angularx-qrcode';
 import { HttpModule } from '@angular/http'
->>>>>>> 4ac14250f74f54130514025c2de3846fa142be3d
 
 
 @NgModule({
@@ -74,13 +70,10 @@ import { HttpModule } from '@angular/http'
     ContractProvider,
     Web3Service,
     HttpModule,
-<<<<<<< HEAD
     HttpClient,
-    LoginServiceProvider
-=======
+    LoginServiceProvider,
     QRScanner,
     HttpClient
->>>>>>> 4ac14250f74f54130514025c2de3846fa142be3d
   ]
 })
 export class AppModule { }

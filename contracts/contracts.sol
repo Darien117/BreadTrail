@@ -4,7 +4,7 @@ pragma solidity ^0.4.18;
 contract Trail {
 
     struct shipment {
-        uint userID;
+        bytes userID;
         uint shipID;
         bytes source;
         bytes dest;
@@ -21,7 +21,7 @@ contract Trail {
     }
     
 
-    function createShipment(uint userID, bytes source, bytes dest, bytes details, bytes loc) public {
+    function createShipment(bytes userID, bytes source, bytes dest, bytes details, bytes loc) public {
         shipID += 1;
 
         // userShipments[shipID] = shipment(1,2,"grande bush","5lb baigan",block.timestamp, "na","2",2);
@@ -36,7 +36,7 @@ contract Trail {
         userShipments[shipID].next = 0;
     }
 
-    function affirm (uint sid, bytes newd, bytes comment, bytes location, uint userID) public {
+    function affirm (uint sid, bytes newd, bytes comment, bytes location, bytes userID) public {
         shipID += 1;
         userShipments[sid].next = shipID;
         userShipments[shipID].source = userShipments[sid].source;
@@ -51,7 +51,7 @@ contract Trail {
         return shipID;
     }
 
-    function getShipment(uint id) view public returns (uint u,uint s,bytes so,bytes d,uint ts,bytes l,bytes c,uint n) {
+    function getShipment(uint id) view public returns (bytes u,uint s,bytes so,bytes d,uint ts,bytes l,bytes c,uint n) {
         u = userShipments[id].userID;
         s = userShipments[id].shipID;
         so = userShipments[id].source;

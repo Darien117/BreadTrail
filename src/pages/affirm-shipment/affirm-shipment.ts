@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { Web3Service } from '../../providers/web3-service/web3-service';
 import { ContractProvider } from '../../providers/contract/contract';
 import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner';
@@ -20,16 +20,17 @@ export class AffirmShipmentPage {
     comment: '',
     shipmentID: 0,
     location: '',
-    userID: 0
+    userID: ''
 
   }
   item: any;
   web3: any;
   contractInstance: any;
   constructor(public navCtrl: NavController, public _web3: Web3Service, public cp: ContractProvider,
-    private qrScanner: QRScanner) {
+    private qrScanner: QRScanner, public navParams: NavParams) {
     this.web3 = _web3.get();
     this.contractInstance = cp.returnContract();
+    this.affirm.userID = this.navParams.get('userID');
   }
 
   ionViewDidLoad() {
@@ -65,7 +66,7 @@ export class AffirmShipmentPage {
       { "name": "newd", "type": "bytes" },
       { "name": "comment", "type": "bytes" },
       { "name": "location", "type": "bytes" },
-      { "name": "userID", "type": "uint256" }
+      { "name": "userID", "type": "bytes" }
       ]
     }, [affirmShipment.shipID, affirmShipment.newDest, affirmShipment.comment, affirmShipment.loc,
     affirmShipment.userID]);
@@ -78,7 +79,7 @@ export class AffirmShipmentPage {
       gasPrice: this.web3.utils.toHex(await this.web3.eth.getGasPrice().then(data => data)),
       gasLimit: this.web3.utils.toHex(4612388), // Web3.toHex(300000)
       from: '0x7005Fa96d92B847043f0Ef87E47616a265C32349',
-      to: '0x072F945751d83765D72A04821C63C30c48D41691',
+      to: '0x90eaC6fbC3f8d4d0AE9A67987CFafb49A09e71C0',
       value: "0x0",
       data: data
     }

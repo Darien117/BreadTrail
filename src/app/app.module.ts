@@ -23,6 +23,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { ContractProvider } from '../providers/contract/contract';
 import { Web3Service } from '../providers/web3-service/web3-service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { LoginServiceProvider } from '../providers/login-service/login-service';
 import { QRScanner } from '@ionic-native/qr-scanner';
 import { QRCodeModule } from 'angularx-qrcode';
 import { HttpModule } from '@angular/http'
@@ -69,6 +70,8 @@ import { HttpModule } from '@angular/http'
     ContractProvider,
     Web3Service,
     HttpModule,
+    HttpClient,
+    LoginServiceProvider,
     QRScanner,
     HttpClient
   ]

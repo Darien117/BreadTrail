@@ -8,6 +8,7 @@ import { Shipment } from '../create-shipment/shipment';
 import { GenCodePage } from '../gencode/gencode';
 import { ViewProduceChainPage } from '../view-produce-chain/view-produce-chain';
 
+
 declare var testCrop
 declare var testName
 declare var testLocation
@@ -16,6 +17,9 @@ declare var testLocation
   templateUrl: 'trace.html'
 })
 export class TracePage {
+
+  userPw: string;
+  userEmail: string;
 
   web3: any;
   contractInstance: any;
@@ -68,7 +72,7 @@ export class TracePage {
           console.log(shipments);
           let timestamp_ms = this.web3.utils.hexToNumber(shipment[4]) * 1000;
           let shipmentObject = {
-            userID: this.web3.utils.hexToNumber(shipment[0]),
+            userID: this.web3.utils.hexToUtf8(shipment[0]),
             shipmentID: this.web3.utils.hexToNumber(shipment[1]),
             source: this.web3.utils.hexToUtf8(shipment[2]),
             dest: this.web3.utils.hexToUtf8(shipment[3]),

@@ -28,9 +28,26 @@
 
   -->
   <h1 text-center="">Shipments</h1>
+  <br>
+  <br>
+  <div id="suggestionDesc2" *ngIf="this.isLoggedIn==false">
+    <p>Login or register first to view your produce:</p>
+  </div>
+  <div *ngIf="this.isLoggedIn==false">
+    <ion-item>
+      <ion-label floating>Email Address</ion-label>
+      <ion-input type="text" [(ngModel)]="this.userEmail"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="this.userPw"></ion-input>
+    </ion-item>
+    <br>
+    <button ion-button color="secondary" (click)="registerUser()">Register</button>
+    <button ion-button color="secondary" (click)="loginUser()">Login</button>
 
-  <div class="buttons" text-center="">
-
+  </div>
+  <div class="buttons" text-center="" *ngIf="this.isLoggedIn==true">
     <button (click)="goToProducePage()" ion-button color="danger">
       Confirm
     </button>
@@ -41,6 +58,31 @@
 
   </div>
 
-</ion-content>
 
+  <br>
+  <br>
+
+  <ion-list id="trace-list2" color="primary" *ngFor="let feedItem of feed">
+    <ion-item color="light" id="trace-list-item8" text-wrap>
+      <div class="linebreak" item-text-wrap>
+        <strong id="title">Shipment</strong>
+        <br>
+        <br>
+        <strong>Product Details:</strong>
+        <p>{{ feedItem.comment }}</p>
+        <strong>Source:</strong>
+        <p> {{ feedItem.source }}</p>
+        <strong>Destination:</strong>
+        <p> {{ feedItem.dest }}</p>
+        <strong>Timestamp:</strong>
+        <p> {{ feedItem.timestamp }}</p>
+        <strong>Location:</strong>
+        <p> {{ feedItem.location}}</p>
+      </div>
+      <button text-right ion-button clear small color="danger" icon-start (click)="genQRCode(feedItem.shipmentID)" class="viewMapButton">
+        <ion-icon name='barcode'></ion-icon>
+        View QR Code
+      </button>
+    </ion-item>
+  </ion-list>
 

@@ -32,7 +32,13 @@
         <strong>Location:</strong>
         <p> {{ feedItem.location}}</p>
       </div>
+      <button text-right ion-button clear small color="danger" icon-start (click)="genQRCode(feedItem.shipmentID)" class="viewMapButton">
+          <ion-icon name='barcode'></ion-icon>
+          View QR Code
+        </button>
 
     </ion-item>
   </ion-list>
+
+  
 </ion-content>
